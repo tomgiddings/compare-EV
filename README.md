@@ -16,7 +16,7 @@ Part of the reason for creating this application is to experiment with and learn
 
 ## Demo
 
-A demo can be found at https://evee-git-main-tomgiddings.vercel.app.
+A demo can be found at https://evee.vercel.app.
 
 ## Getting Started
 
