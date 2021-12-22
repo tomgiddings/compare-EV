@@ -135,8 +135,8 @@ const Home: NextPage = () => {
       </header>
       <section className="my-6">
         <div className="container mx-auto space-y-3 content">
-          <p><strong>Welcome to EVEE: The Electric Vehicle Comparison site.</strong> Finding an electric vehicle that's right for you can be a challenging task,
-          and it's sometimes hard to know where to start. EVEE lets you select vehicles that interest you and easily compare them (with handy notes on what each feature means for you).</p>
+          <p><strong>Welcome to EVEE: The Electric Vehicle Comparison site.</strong> Finding an electric vehicle thatt&apos;s right for you can be a challenging task,
+          and it&apos;s sometimes hard to know where to start. EVEE lets you select vehicles that interest you and easily compare them (with handy notes on what each feature means for you).</p>
           <p>Get started by selecting from the options below...</p>
         </div>
       </section>
@@ -148,7 +148,7 @@ const Home: NextPage = () => {
             {!loading && (
               <>
                 {vehicles.map(vehicle => (
-                  <article className="max-w-sm bg-white rounded-xl shadow-md dark:bg-gray-800 dark:border-gray-700">
+                  <article key={vehicle._id} className="max-w-sm bg-white rounded-xl shadow-md dark:bg-gray-800 dark:border-gray-700">
                    {vehicle.images.length && 
                     <figure className="h-60 relative mb-3"> 
                       <Image
@@ -164,7 +164,7 @@ const Home: NextPage = () => {
                     </figure>
                     
                     }
-                    <div className="content px-5 pb-5" key={vehicle._id}>
+                    <div className="content px-5 pb-5">
                       <h2 className="text-gray-800 font-medium py-3 font-sans">{vehicle.year} {vehicle.make} {vehicle.model} <small className="text-purple-800 pl-1">{vehicle.version}</small></h2>
                       <p className="text-gray-700">{vehicle.battery} KWh battery with a WLTP range of {vehicle.WLTP} miles.</p>
                     </div>
