@@ -1,34 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# EVEE - Electric Vehicle Comparison App
+
+The purpose of EVEE is to provide a simple comparison website for those wishing to purchase an Electric Vehicle (EV). Users will be able to select vehicles that interest them and be presented with an annotated comparison table.
+
+![EVEE Screenshot](screenshot.jpg)
+
+## Tech Used
+
+Part of the reason for creating this application is to experiment with and learn technologies (namely GraphQL and MongoDB Atlas/Realm):
+
+- UI: [Next.js](https://nextjs.org)
+- CSS: [Tailwind](https://tailwindcss.com)
+- DB: [MongoDB Atlas](https://www.mongodb.com/atlas/database)
+- API: [MongoDB Realm](https://www.mongodb.com/realm)
+- Query: [GraphQL](https://graphql.org)
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+
+```bash
+npm i
+```
+
+2. Launch app:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Visit [http://localhost:3000](http://localhost:3000) with your browser.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## API Setup
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This app has been granted read-only access to the database using MongoDB Realm, and is pre-configured for anonymous access. No further configuration is required.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The easiest way to deploy this app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Ongoing Development and Support
+
+I'm posting this as a work-in-progress (mostly for fun) and will aim to update it over time. However, this is not a supported, production ready product. If you would like to contribute, or have any questions, please [feel free to raise an issue](https://github.com/tomgiddings/evee/issues) or create a Pull Request.

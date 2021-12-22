@@ -1,0 +1,19 @@
+{
+    "year": "2021",
+    "make": "Nissan",
+    "model": "Leaf",
+    "battery": 40,
+    "WLTP": 168,
+    "realWorldRange": 160,
+    "chargingAC": {
+        "method": "Type 2", 
+        "powerRating": 3.6
+    },
+    "chargingDC": {
+        "method": "CHAdeMO", 
+        "powerRating": 50
+    },
+    "price": {
+        "OTR": 28995
+    }
+}
