@@ -98,7 +98,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="bg-gradient-to-r from-purple-900 to-purple-500 border-gray-200 shadow-2xl mb-10 px-3 md:px-0">
+      <header className="bg-gradient-to-r from-purple-900 to-purple-500 border-gray-200 shadow-2xl mb-10 px-3 md:px-1">
         <nav className="container mx-auto text-white py-3 flex space-x-4 items-end">
           <div className="w-24 my-3 min-h-fit">
             <svg className="object-scale-down" version="1.1" id="electric_car" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px"
@@ -142,7 +142,7 @@ const Home: NextPage = () => {
           </div>
         </nav>
       </header>
-      <section className="my-6 p-3 md:p-0 z-10">
+      <section className="my-6 p-3 z-10">
         <div className="container mx-auto space-y-3 content">
           <p><strong>Welcome to EVEE: The Electric Vehicle Comparison site.</strong> Finding an electric vehicle thatt&apos;s right for you can be a challenging task,
           and it&apos;s sometimes hard to know where to start. EVEE lets you select vehicles that interest you and easily compare them (with handy notes on what each feature means for you).</p>
@@ -150,14 +150,14 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <main className="mt-6 p-3 md:p-0 z-10">
+      <main className="mt-6 p-3 z-10">
         <section className="container mx-auto">
           <div className="grid grid-flow-row-dense md:grid-flow-row-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-3 mb-6">
             {loading && <div>Loading</div>}
             {!loading && (
               <>
                 {vehicles.map(vehicle => (
-                  <article key={vehicle._id} className={(compare.includes(vehicle._id) ? 'outline outline-purple-800 ' : '') + 'flex flex-col justify-between bg-white max-w-sm rounded-xl shadow-md'}>
+                  <article key={vehicle._id} className={(compare.includes(vehicle._id) ? 'ring-2 ring-purple-700 ' : '') + 'flex flex-col justify-between bg-white max-w-sm rounded-xl shadow-md'}>
                    {vehicle.images.length && 
                     <figure className="h-60 relative mb-3"> 
                       <Image
@@ -177,7 +177,7 @@ const Home: NextPage = () => {
                       <p className="text-gray-700">{vehicle.battery} KWh battery with a WLTP range of {vehicle.WLTP} miles.</p>
                     </div>
                    
-                    <div className="flex justify-between items-center p-5 bg-gray-100">
+                    <div className="flex justify-between items-center p-5 bg-gray-100 rounded-b-xl">
                         {vehicle?.pricing?.OTR && (<NumberFormat value={vehicle.pricing.OTR} displayType={'text'} thousandSeparator={true} prefix={'From £'} className="text-gray-700 text-xl font-medium" />)}
                         <button onClick={() => handleCompare(vehicle._id)}
                           className="text-white
@@ -191,10 +191,26 @@ const Home: NextPage = () => {
                           font-medium rounded-lg
                           text-sm
                           px-3 py-2.5
-                          text-center 
+                          text-center
+                          flex
+                          items-center
                           tracking-wide"
                         >
-                          {compare.includes(vehicle._id) ? 'Remove' : 'Select'}
+                          {compare.includes(vehicle._id)
+                            ? <>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 pr-1" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+                                </svg>
+                                Remove
+                              </>
+                            : <>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 pr-1" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />
+                                </svg>
+                                Add
+                          </>
+
+                          }
                         </button>
                     </div>
                   </article>
@@ -211,20 +227,23 @@ const Home: NextPage = () => {
             <NumberFormat value={compare.length} displayType={'text'} suffix={' vehicles selected'} className="text-white font-semibold pr-3" />
             <button className="
               text-white
-              bg-gradient-to-r
-              from-purple-900
-              to-purple-700
-              hover:from-purple-900
-              hover:to-purple-800
+              ring-2
+              ring-offset-current
+              ring-purple-700
+              hover:ring-purple-900
               focus:ring-4
-              focus:ring-blue-300
+              focus:ring-purple-300
               font-medium rounded-lg
-              text-sm
               px-3 py-2.5
               text-center
-              tracking-wide
+              flex
+              items-center
+              tracking-wider
             ">
-              Compare
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 pr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+              See Comparison
             </button>
           </nav>
         </section>
@@ -237,7 +256,7 @@ const Home: NextPage = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 width="11.289mm" height="10.936mm">
-                <image  x="0px" y="0px" width="32px" height="31px"  xlinkHref="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAfCAMAAACxiD++AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABLFBMVEUAAAAXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRb///8V8QNzAAAAYnRSTlMAFGOk0vMxqfsPm/7eQvEzEd/WrZ5cB+jBNDIoAq41GPxfZ+MS4mL24dvc8hbQXp3RBFmPDfWrGZeKP8L6qmUDOWge93PJAbB+OCE8PsS5EHpGFW8fw3VgeAi3ZOrrDNrsdCp+JIEAAAABYktHRGNcvi2qAAAAB3RJTUUH5QwWAy4eyZFPxQAAAYtJREFUKM9tkmdfwjAQxs8yyh4VygZFHCigTFERVLTiQBy4cID5/h/C5FL667oX3PV5/jlySQC0WBEcThchLqdDWAFruEUP0cIjuk221+cnhvD7vIblAWKJgK5JMERsIhRc+mFbnxJh7kei9ENaNVChVYn+RiMIxJgSB1lI0BGTSTpqQpAhztQY81O4JM1GyWSZkM2wAdIop2iVwypvPpc8yjmAwhpW62ZgHeW1AhSx2CiZgdImGkUQMW9Zz34LDREk7OS1Al78bwm2WdqxuT3YYc42YKOyHbCLFgf27IA9DvBUsfoVdWkVc80K1NCowj7mg7rZrx+gsQ8Nfn1NM9DkegNabV51Cnr7sMPVdgugS8jR8QkhvdN+aoDNz85zPfVddOn3xZD4L+UrvDuFAcq19m6GF0wY0ermlt3NHe9/rwEjvt8xIQ8wER6fBhx4XvpjdbYCPdQX3Q4nqr+r7XtaJuT17f3j0wCUp7rXMUNpogdmhjekfH0bgZ++Yjq538v5QualvJj//S71f3smo3eTXXLyAAAAAElFTkSuQmCC" />
+                <image x="0px" y="0px" width="32px" height="31px"  xlinkHref="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAfCAMAAACxiD++AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABLFBMVEUAAAAXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRb///8V8QNzAAAAYnRSTlMAFGOk0vMxqfsPm/7eQvEzEd/WrZ5cB+jBNDIoAq41GPxfZ+MS4mL24dvc8hbQXp3RBFmPDfWrGZeKP8L6qmUDOWge93PJAbB+OCE8PsS5EHpGFW8fw3VgeAi3ZOrrDNrsdCp+JIEAAAABYktHRGNcvi2qAAAAB3RJTUUH5QwWAy4eyZFPxQAAAYtJREFUKM9tkmdfwjAQxs8yyh4VygZFHCigTFERVLTiQBy4cID5/h/C5FL667oX3PV5/jlySQC0WBEcThchLqdDWAFruEUP0cIjuk221+cnhvD7vIblAWKJgK5JMERsIhRc+mFbnxJh7kei9ENaNVChVYn+RiMIxJgSB1lI0BGTSTpqQpAhztQY81O4JM1GyWSZkM2wAdIop2iVwypvPpc8yjmAwhpW62ZgHeW1AhSx2CiZgdImGkUQMW9Zz34LDREk7OS1Al78bwm2WdqxuT3YYc42YKOyHbCLFgf27IA9DvBUsfoVdWkVc80K1NCowj7mg7rZrx+gsQ8Nfn1NM9DkegNabV51Cnr7sMPVdgugS8jR8QkhvdN+aoDNz85zPfVddOn3xZD4L+UrvDuFAcq19m6GF0wY0ermlt3NHe9/rwEjvt8xIQ8wER6fBhx4XvpjdbYCPdQX3Q4nqr+r7XtaJuT17f3j0wCUp7rXMUNpogdmhjekfH0bgZ++Yjq538v5QualvJj//S71f3smo3eTXXLyAAAAAElFTkSuQmCC" />
               </svg>
               View the code for this site on GitHub
             </a>
