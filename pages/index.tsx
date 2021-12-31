@@ -35,6 +35,7 @@ interface IVehicle {
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(true);
   const [vehicles, setVehicles] = useState<Array<IVehicle>>([]);
+  const [compare, setCompare] = useState<Array<String>>([]);
 
   const logoColor = '#ffffff';
 
@@ -77,6 +78,14 @@ const Home: NextPage = () => {
     fetchData();
   }, [setVehicles, FIND_VEHICLES]);
 
+  const handleCompare = (_id: string) => {
+    if (compare.includes(_id)) {
+      setCompare(compare.filter((vehicleId) => vehicleId !== _id));
+    } else {
+      setCompare([...compare, _id])
+    }
+  }
+
   const loader: ImageLoader = ({ src, width, quality }) => {
     return `${src}?w=${width}&q=${quality || 75}`
   }
@@ -89,9 +98,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="bg-gradient-to-r from-purple-900 to-purple-500 border-gray-200 shadow-2xl mb-10 p-3 md:p-0">
+      <header className="bg-gradient-to-r from-purple-900 to-purple-500 border-gray-200 shadow-2xl mb-10 px-3 md:px-0">
         <nav className="container mx-auto text-white py-3 flex space-x-4 items-end">
-          <div className="w-32 my-3 min-h-fit">
+          <div className="w-24 my-3 min-h-fit">
             <svg className="object-scale-down" version="1.1" id="electric_car" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px"
             y="0px" viewBox="0 0 621 326" enableBackground="new 0 0 621 326" xmlSpace="preserve">
               <g id="parts">
@@ -133,7 +142,7 @@ const Home: NextPage = () => {
           </div>
         </nav>
       </header>
-      <section className="my-6 p-3 md:p-0">
+      <section className="my-6 p-3 md:p-0 z-10">
         <div className="container mx-auto space-y-3 content">
           <p><strong>Welcome to EVEE: The Electric Vehicle Comparison site.</strong> Finding an electric vehicle thatt&apos;s right for you can be a challenging task,
           and it&apos;s sometimes hard to know where to start. EVEE lets you select vehicles that interest you and easily compare them (with handy notes on what each feature means for you).</p>
@@ -141,24 +150,23 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <main className="mt-6 p-3 md:p-0">
+      <main className="mt-6 p-3 md:p-0 z-10">
         <section className="container mx-auto">
-          <div className="grid grid-flow-row-dense md:grid-flow-row-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-3">
+          <div className="grid grid-flow-row-dense md:grid-flow-row-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-3 mb-6">
             {loading && <div>Loading</div>}
             {!loading && (
               <>
                 {vehicles.map(vehicle => (
-                  <article key={vehicle._id} className="max-w-sm bg-white rounded-xl shadow-md dark:bg-gray-800 dark:border-gray-700">
+                  <article key={vehicle._id} className={(compare.includes(vehicle._id) ? 'outline outline-purple-800 ' : '') + 'bg-white max-w-sm rounded-xl shadow-md'}>
                    {vehicle.images.length && 
                     <figure className="h-60 relative mb-3"> 
                       <Image
                         loader={loader}
                         src={vehicle.images[0] as string}
                         alt="Picture of the author"
-                        width={600}
                         layout="fill"
                         objectFit="cover"
-                        className="object-fill"
+                        className="object-fill rounded-t-xl"
                         loading="lazy"
                       />
                     </figure>
@@ -171,7 +179,23 @@ const Home: NextPage = () => {
                    
                     <div className="flex justify-between items-center p-5 bg-gray-100">
                         {vehicle?.pricing?.OTR && (<NumberFormat value={vehicle.pricing.OTR} displayType={'text'} thousandSeparator={true} prefix={'From £'} className="text-gray-700 text-xl font-medium" />)}
-                        <a href="#" className="text-white bg-gradient-to-r from-purple-900 to-purple-700 hover:from-purple-900 hover:to-purple-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 tracking-wide">Compare</a>
+                        <button onClick={() => handleCompare(vehicle._id)}
+                          className="text-white
+                          bg-gradient-to-r
+                          from-purple-900
+                          to-purple-700
+                          hover:from-purple-900
+                          hover:to-purple-800
+                          focus:ring-4
+                          focus:ring-blue-300
+                          font-medium rounded-lg
+                          text-sm
+                          px-3 py-2.5
+                          text-center 
+                          tracking-wide"
+                        >
+                          {compare.includes(vehicle._id) ? 'Remove' : 'Select'}
+                        </button>
                     </div>
                   </article>
                 ))}
@@ -181,7 +205,32 @@ const Home: NextPage = () => {
         </section>
       </main>
 
-      <footer className="footer mt-10 mb-5 p-3 md:p-0">
+      {compare.length > 1 &&
+        <section className="sticky bottom-0 z-50 bg-gradient-to-r from-purple-900 to-purple-500 border-gray-200 shadow-2xl px-4 md:px-3 py-1 text-sm w-full">
+          <nav className="container mx-auto flex flex-row space-x-3 items-center justify-between">
+            <NumberFormat value={compare.length} displayType={'text'} suffix={' vehicles selected'} className="text-white font-semibold pr-3" />
+            <button className="
+              text-white
+              bg-gradient-to-r
+              from-purple-900
+              to-purple-700
+              hover:from-purple-900
+              hover:to-purple-800
+              focus:ring-4
+              focus:ring-blue-300
+              font-medium rounded-lg
+              text-sm
+              px-3 py-2.5
+              text-center
+              tracking-wide
+            ">
+              View Comparison
+            </button>
+          </nav>
+        </section>
+      }
+
+      <footer className="footer mt-10 mb-5 p-3 md:p-0 z-10">
         <div className="container mx-auto">
             <a href="https://github.com/tomgiddings/evee" className="flex items-center underline decoration-1 decoration-dashed underline-offset-2">
               <svg 
