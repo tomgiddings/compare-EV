@@ -157,13 +157,13 @@ const Home: NextPage = () => {
             {!loading && (
               <>
                 {vehicles.map(vehicle => (
-                  <article key={vehicle._id} className={(compare.includes(vehicle._id) ? 'outline outline-purple-800 ' : '') + 'bg-white max-w-sm rounded-xl shadow-md'}>
+                  <article key={vehicle._id} className={(compare.includes(vehicle._id) ? 'outline outline-purple-800 ' : '') + 'flex flex-col justify-between bg-white max-w-sm rounded-xl shadow-md'}>
                    {vehicle.images.length && 
                     <figure className="h-60 relative mb-3"> 
                       <Image
                         loader={loader}
                         src={vehicle.images[0] as string}
-                        alt="Picture of the author"
+                        alt={`${vehicle.make} ${vehicle.model} ${vehicle.version}`}
                         layout="fill"
                         objectFit="cover"
                         className="object-fill rounded-t-xl"
@@ -206,7 +206,7 @@ const Home: NextPage = () => {
       </main>
 
       {compare.length > 1 &&
-        <section className="sticky bottom-0 z-50 bg-gradient-to-r from-purple-900 to-purple-500 border-gray-200 shadow-2xl px-4 md:px-3 py-1 text-sm w-full">
+        <section className="sticky bottom-0 z-50 bg-gradient-to-r from-purple-900 to-purple-500 border-gray-200 shadow-2xl px-4 md:px-3 py-2 w-full">
           <nav className="container mx-auto flex flex-row space-x-3 items-center justify-between">
             <NumberFormat value={compare.length} displayType={'text'} suffix={' vehicles selected'} className="text-white font-semibold pr-3" />
             <button className="
@@ -224,7 +224,7 @@ const Home: NextPage = () => {
               text-center
               tracking-wide
             ">
-              View Comparison
+              Compare
             </button>
           </nav>
         </section>
