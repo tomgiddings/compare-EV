@@ -71,8 +71,8 @@ const Home: NextPage = () => {
       
       <section className="my-6 p-3 z-10">
         <div className="container mx-auto space-y-3 content">
-          <p><strong>Welcome to EVEE: The Electric Vehicle Comparison site.</strong> Finding an electric vehicle thatt&apos;s right for you can be a challenging task,
-          and it&apos;s sometimes hard to know where to start. EVEE lets you select vehicles that interest you and easily compare them (with handy notes on what each feature means for you).</p>
+          <p><strong>Welcome to CompareEV: The Electric Vehicle Comparison site.</strong> Finding an electric vehicle thatt&apos;s right for you can be a challenging task,
+          and it&apos;s sometimes hard to know where to start. CompareEV lets you select vehicles that interest you and easily compare them (with handy notes on what each feature means for you).</p>
           <p>Get started by selecting from the options below...</p>
         </div>
       </section>
