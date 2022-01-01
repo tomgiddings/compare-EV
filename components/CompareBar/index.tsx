@@ -1,7 +1,7 @@
 import NumberFormat from 'react-number-format';
 
 interface ICompareBar {
-    compare: Array<String>
+    compare: Array<string>
 }
 
 const CompareBar: React.FC<ICompareBar> = ({ compare }) => {

@@ -16,7 +16,7 @@ import CompareTable from '../components/CompareTable';
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(true);
   const [vehicles, setVehicles] = useState<Array<I.Vehicle>>([]);
-  const [compare, setCompare] = useState<Array<String>>([]);
+  const [compare, setCompare] = useState<Array<string>>([]);
 
   const logoColor = '#ffffff';
 
