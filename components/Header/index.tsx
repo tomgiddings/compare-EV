@@ -44,7 +44,7 @@ const Header: React.FC<IHeader> = ({ logoColor }) => {
           </div>
 
           <div>
-            <h1 className="font-semibold">EVEE <small className="text-lg hidden md:inline">The Electric Vehicle Comparison Site</small></h1>
+            <h1 className="font-semibold">CompareEV <small className="text-lg hidden md:inline">The Electric Vehicle Comparison Site</small></h1>
           </div>
         </nav>
       </header>

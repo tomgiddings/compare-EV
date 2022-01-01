@@ -44,4 +44,4 @@ The easiest way to deploy this app is to use the [Vercel Platform](https://verce
 
 ## Ongoing Development and Support
 
-I'm posting this as a work-in-progress (mostly for fun) and will aim to update it over time. However, this is not a supported, production ready product. If you would like to contribute, or have any questions, please [feel free to raise an issue](https://github.com/tomgiddings/evee/issues) or create a Pull Request.
+I'm posting this as a work-in-progress (mostly for fun) and will aim to update it over time. However, this is not a supported, production ready product. If you would like to contribute, or have any questions, please [feel free to raise an issue](https://github.com/tomgiddings/compare-EV/issues) or create a Pull Request.

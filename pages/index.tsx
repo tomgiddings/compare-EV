@@ -62,7 +62,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>EVEE - The Electric Vehicle Comparison Site</title>
+        <title>CompareEV - The Electric Vehicle Comparison Site</title>
         <meta name="description" content="Helping you find your next Electric Vehicle" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
