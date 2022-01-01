@@ -2,6 +2,14 @@
 
 The purpose of CompareEV is to provide a simple comparison website for those wishing to purchase an Electric Vehicle (EV). Users will be able to select vehicles that interest them and be presented with an annotated comparison table.
 
+## Contributions Welcome
+
+If you would like to contribute, or have any questions, please [feel free to raise an issue](https://github.com/tomgiddings/compare-EV/issues) or create a Pull Request.
+
+If you would like to request an update to vehicle data, you can [submit your update here](https://github.com/tomgiddings/compare-EV/issues/new?assignees=tomgiddings&labels=data-update&template=request-vehicle-data-update.md).
+
+## Screenshots
+
 ![CompareEV Screenshot](screenshot.jpg)
 
 ## Tech Used
@@ -42,6 +50,6 @@ This app has been granted read-only access to the database using MongoDB Realm, 
 
 The easiest way to deploy this app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## Ongoing Development and Support
+## License
 
-I'm posting this as a work-in-progress (mostly for fun) and will aim to update it over time. However, this is not a supported, production ready product. If you would like to contribute, or have any questions, please [feel free to raise an issue](https://github.com/tomgiddings/compare-EV/issues) or create a Pull Request.
+This project is licensed under the [GNU General Public License v3.0](https://github.com/tomgiddings/compare-EV/blob/main/LICENSE).
