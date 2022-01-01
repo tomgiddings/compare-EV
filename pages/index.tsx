@@ -82,10 +82,12 @@ const Home: NextPage = () => {
           <Vehicles vehicleData={vehicles} loading={loading} compare={compare} setCompare={setCompare} />              
         </section>
 
-        <section className="container mx-auto" id="comparison">
-          <h2>Your Comparison</h2>
-          <CompareTable compare={compare} vehicles={vehicles} />
-        </section>
+        {compare.length > 1 && 
+          <section className="container mx-auto" id="comparison">
+            <h2>Your Comparison</h2>
+            <CompareTable compare={compare} vehicles={vehicles} />
+          </section>
+        }
       </main>
 
       <CompareBar compare={compare} />
