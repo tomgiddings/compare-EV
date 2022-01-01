@@ -11,6 +11,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Vehicles from '../components/Vehicles';
 import CompareBar from '../components/CompareBar';
+import CompareTable from '../components/CompareTable';
 
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(true);
@@ -79,6 +80,11 @@ const Home: NextPage = () => {
       <main className="mt-6 p-3 z-10">
         <section className="container mx-auto">
           <Vehicles vehicleData={vehicles} loading={loading} compare={compare} setCompare={setCompare} />              
+        </section>
+
+        <section className="container mx-auto" id="comparison">
+          <h2>Your Comparison</h2>
+          <CompareTable compare={compare} vehicles={vehicles} />
         </section>
       </main>
 
