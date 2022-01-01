@@ -1,8 +1,8 @@
-# EVEE - Electric Vehicle Comparison App
+# CompareEV - Electric Vehicle Comparison App
 
-The purpose of EVEE is to provide a simple comparison website for those wishing to purchase an Electric Vehicle (EV). Users will be able to select vehicles that interest them and be presented with an annotated comparison table.
+The purpose of CompareEV is to provide a simple comparison website for those wishing to purchase an Electric Vehicle (EV). Users will be able to select vehicles that interest them and be presented with an annotated comparison table.
 
-![EVEE Screenshot](screenshot.jpg)
+![CompareEV Screenshot](screenshot.jpg)
 
 ## Tech Used
 
@@ -14,9 +14,9 @@ Part of the reason for creating this application is to experiment with and learn
 - API: [MongoDB Realm](https://www.mongodb.com/realm)
 - Query: [GraphQL](https://graphql.org)
 
-## Demo
+## Live Version/Demo
 
-A demo can be found at https://evee.vercel.app.
+A live version can be found at https://compareEV.uk.
 
 ## Getting Started
 
