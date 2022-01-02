@@ -17,6 +17,7 @@ const Home: NextPage = () => {
   const [loading, setLoading] = useState(true);
   const [vehicles, setVehicles] = useState<Array<I.Vehicle>>([]);
   const [compare, setCompare] = useState<Array<string>>([]);
+  const [showComparison, setShowComparison] = useState<boolean>(false)
 
   const logoColor = '#ffffff';
 
@@ -68,21 +69,25 @@ const Home: NextPage = () => {
       </Head>
 
       <Header logoColor={logoColor} />
-      
-      <section className="my-6 p-3 z-10">
-        <div className="container mx-auto space-y-3 content">
-          <p><strong>Welcome to CompareEV: The Electric Vehicle Comparison site.</strong> Finding an electric vehicle that&apos;s right for you can be a challenging task,
-          and it&apos;s sometimes hard to know where to start. CompareEV lets you select vehicles that interest you and easily compare them (with handy notes on what each feature means for you).</p>
-          <p>Get started by selecting from the options below...</p>
-        </div>
-      </section>
 
-      <main className="mt-6 p-3 z-10">
-        <section className="container mx-auto">
-          <Vehicles vehicleData={vehicles} loading={loading} compare={compare} setCompare={setCompare} />              
-        </section>
+      <main className="mt-3 p-3 z-10">
+        {!showComparison && 
+          <>
+            <section className="my-6 p-3 z-10">
+            <div className="container mx-auto space-y-3 content">
+              <h2 className="tracking-wide">Welcome to CompareEV: The Electric Vehicle Comparison site</h2>
+              <p>Finding an electric vehicle that&apos;s right for you can be a challenging task,
+              and it&apos;s sometimes hard to know where to start. CompareEV lets you select vehicles that interest you and easily compare them (with handy notes on what each feature means for you).</p>
+              <p>You can get started by selecting from the options below...</p>
+            </div>
+            </section>
+            <section className="container mx-auto">
+              <Vehicles vehicleData={vehicles} loading={loading} compare={compare} setCompare={setCompare} />              
+            </section>
+          </>
+        }
 
-        {compare.length > 1 && 
+        {showComparison && compare.length > 1 && 
           <section className="container mx-auto" id="comparison">
             <h2>Your Comparison</h2>
             <CompareTable compare={compare} vehicles={vehicles} />
@@ -90,7 +95,7 @@ const Home: NextPage = () => {
         }
       </main>
 
-      <CompareBar compare={compare} />
+      <CompareBar compare={compare} showComparison={showComparison} setShowComparison={setShowComparison} />
 
       <Footer />
     </>
