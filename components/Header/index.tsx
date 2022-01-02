@@ -4,7 +4,7 @@ interface IHeader {
 
 const Header: React.FC<IHeader> = ({ logoColor }) => {
     return (
-        <header className="bg-gradient-to-r from-purple-900 to-purple-500 border-gray-200 shadow-2xl mb-10 px-3 md:px-1">
+        <header className="bg-gradient-to-r from-purple-900 to-purple-500 border-gray-200 shadow-2xl mb-3 px-3 md:px-1">
         <nav className="container mx-auto text-white py-3 flex space-x-4 items-end">
           <div className="w-24 my-3 min-h-fit">
             <svg className="object-scale-down" version="1.1" id="electric_car" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px"
