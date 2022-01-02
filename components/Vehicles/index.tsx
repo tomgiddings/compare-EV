@@ -8,8 +8,8 @@ import * as I from '../../lib/Interface';
 interface IVehicles {
     vehicleData: Array<I.Vehicle>
     loading: boolean
-    setCompare: Function
-    compare: Array<String>
+    setCompare: (value: Array<string>) => void
+    compare: Array<string>
 }
 
 const Vehicles: React.FC<IVehicles> = ({ vehicleData, loading, setCompare, compare }) => {

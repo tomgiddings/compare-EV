@@ -3,7 +3,7 @@ import { ConditionalKeys } from 'type-fest';
 interface ChargingMethod {
   method: string
   powerRating: number
-};
+}
 
 interface Pricing {
   OTR: number

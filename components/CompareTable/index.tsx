@@ -3,7 +3,7 @@ import Image, { ImageLoader } from 'next/image';
 import NumberFormat from 'react-number-format';
 
 interface ICompareTable {
-    compare: Array<String>
+    compare: Array<string>
     vehicles: Array<I.Vehicle>
 }
 
