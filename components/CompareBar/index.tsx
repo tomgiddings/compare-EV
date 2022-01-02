@@ -12,7 +12,12 @@ const CompareBar: React.FC<ICompareBar> = ({ compare, showComparison, setShowCom
         return (
             <section className="sticky bottom-0 z-50 bg-gradient-to-r from-purple-900 to-purple-500 border-gray-200 shadow-2xl px-4 md:px-3 py-2 w-full">
                 <nav className="container mx-auto flex flex-row space-x-3 items-center justify-between">
-                <NumberFormat value={compare.length} displayType={'text'} suffix={' vehicles selected'} className="text-white font-semibold pr-3" />
+                <span className="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <NumberFormat value={compare.length} displayType={'text'} suffix={' vehicles selected'} className="text-white font-semibold pr-3" />
+                </span>
                 <button onClick={() => setShowComparison(!showComparison)} className="
                     text-white
                     ring-2
