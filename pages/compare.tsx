@@ -13,7 +13,7 @@ import Vehicles from '../components/Vehicles';
 import CompareBar from '../components/CompareBar';
 import CompareTable from '../components/CompareTable';
 
-const Home: NextPage = () => {
+const Compare: NextPage = () => {
   const [loading, setLoading] = useState(true);
   const [vehicles, setVehicles] = useState<Array<I.Vehicle>>([]);
   const [compare, setCompare] = useState<Array<string>>([]);
@@ -99,4 +99,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Compare
