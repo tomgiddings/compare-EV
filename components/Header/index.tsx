@@ -4,9 +4,9 @@ interface IHeader {
 
 const Header: React.FC<IHeader> = ({ logoColor }) => {
     return (
-        <header className="bg-gradient-to-r from-purple-900 to-purple-500 border-gray-200 shadow-2xl mb-3 px-3 md:px-1">
-        <nav className="container mx-auto text-white py-3 flex space-x-4 items-end">
-          <div className="w-24 my-3 min-h-fit">
+        <header className="bg-gradient-to-r from-purple-900 to-purple-500 border-gray-200 shadow-2xl mb-3 px-4 md:px-3 md:pb-3">
+        <nav className="container mx-auto text-white py-1 md:py-3 flex space-x-4 items-end">
+          <a href="/" className="w-24 my-3 min-h-fit">
             <svg className="object-scale-down" version="1.1" id="electric_car" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px"
             y="0px" viewBox="0 0 621 326" enableBackground="new 0 0 621 326" xmlSpace="preserve">
               <g id="parts">
@@ -41,11 +41,11 @@ const Header: React.FC<IHeader> = ({ logoColor }) => {
                 </g>
               </g>
             </svg>
-          </div>
+          </a>
 
-          <div>
-            <h1 className="font-semibold">CompareEV <small className="text-lg hidden md:inline">The Electric Vehicle Comparison Site</small></h1>
-          </div>
+          <a  href="/" className="font-mono font-semibold text-3xl md:text-5xl mb-2">
+            CompareEV <small className="text-lg hidden md:inline">The Electric Vehicle Comparison Site</small>
+          </a>
         </nav>
       </header>
     )
