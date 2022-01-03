@@ -4,6 +4,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .prose a,
+  footer a {
+    @apply underline decoration-1 decoration-dashed underline-offset-2;
+  }
+  .prose a:hover,
+  footer a:hover {
+    @apply decoration-solid
+  }
+}
+
+@layer base {
+  a {
+    @apply underline decoration-1 decoration-dashed underline-offset-2;
+  }
+}
+
 html,
 body {
   padding: 0;

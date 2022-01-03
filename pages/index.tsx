@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image, { ImageLoader } from 'next/image';
 import Link from 'next/link';
 
-
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 
 const Home: NextPage = () => {
@@ -58,7 +58,8 @@ const Home: NextPage = () => {
                     flex
                     items-center
                     tracking-wide
-                    no-underline"
+                    no-underline
+                    decoration-transparent"
                     >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 pr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -69,18 +70,7 @@ const Home: NextPage = () => {
                 <article className="container mx-auto prose mt-7">
                   <h2>Open Source</h2>
                   <p>CompareEV is an Open Source project licensed under <a href="https://github.com/tomgiddings/compare-EV/blob/main/LICENSE">GNU General Public License v3.0</a> and contributions are always welcome, from coding new features and fixing bugs, to helping to maintain our data.</p>
-
-                  <a href="https://github.com/tomgiddings/evee" className="flex basis-auto gap-x-3 items-center underline decoration-1 decoration-dashed underline-offset-2">
-                  <figure>
-                      <svg 
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlnsXlink="http://www.w3.org/1999/xlink"
-                          width="11.289mm" height="10.936mm">
-                          <image x="0px" y="0px" width="32px" height="31px"  xlinkHref="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAfCAMAAACxiD++AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABLFBMVEUAAAAXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRYXFRb///8V8QNzAAAAYnRSTlMAFGOk0vMxqfsPm/7eQvEzEd/WrZ5cB+jBNDIoAq41GPxfZ+MS4mL24dvc8hbQXp3RBFmPDfWrGZeKP8L6qmUDOWge93PJAbB+OCE8PsS5EHpGFW8fw3VgeAi3ZOrrDNrsdCp+JIEAAAABYktHRGNcvi2qAAAAB3RJTUUH5QwWAy4eyZFPxQAAAYtJREFUKM9tkmdfwjAQxs8yyh4VygZFHCigTFERVLTiQBy4cID5/h/C5FL667oX3PV5/jlySQC0WBEcThchLqdDWAFruEUP0cIjuk221+cnhvD7vIblAWKJgK5JMERsIhRc+mFbnxJh7kei9ENaNVChVYn+RiMIxJgSB1lI0BGTSTpqQpAhztQY81O4JM1GyWSZkM2wAdIop2iVwypvPpc8yjmAwhpW62ZgHeW1AhSx2CiZgdImGkUQMW9Zz34LDREk7OS1Al78bwm2WdqxuT3YYc42YKOyHbCLFgf27IA9DvBUsfoVdWkVc80K1NCowj7mg7rZrx+gsQ8Nfn1NM9DkegNabV51Cnr7sMPVdgugS8jR8QkhvdN+aoDNz85zPfVddOn3xZD4L+UrvDuFAcq19m6GF0wY0ermlt3NHe9/rwEjvt8xIQ8wER6fBhx4XvpjdbYCPdQX3Q4nqr+r7XtaJuT17f3j0wCUp7rXMUNpogdmhjekfH0bgZ++Yjq538v5QualvJj//S71f3smo3eTXXLyAAAAAElFTkSuQmCC" />
-                      </svg>
-                  </figure>
-                  View the code and contribute to Compare EV on GitHub!
-                  </a>
+                  <Footer />
                 </article>
             </section>
       </main>

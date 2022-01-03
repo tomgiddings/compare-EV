@@ -125,7 +125,7 @@ const CompareTable: React.FC<ICompareTable> = ({ compare, vehicles }) => {
                             const { displayName, key } = specification;
                             return (
                                 <tr key={displayName} className="border relative">
-                                    <td className="p-3 bg-gray-100 sticky left-0">
+                                    <td className="py-3 px-2 bg-gray-100 sticky left-0 text-gray-900 text-sm">
                                         {displayName}
                                     </td>
                                     { compareVehicles.map(vehicle => (
