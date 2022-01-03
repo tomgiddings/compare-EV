@@ -42,8 +42,7 @@ const Home: NextPage = () => {
                   <p>Finding an electric vehicle that&apos;s right for you can be a challenging task,
                   and it&apos;s sometimes hard to know where to start. CompareEV lets you select vehicles that interest you and easily compare them (with handy notes on what each feature means for you).</p>
                   <Link href="/compare">
-                    <a href="/compare"
-                    className="text-white
+                    <a className="text-white
                     w-full md:w-1/3
                     bg-gradient-to-r
                     from-purple-900
