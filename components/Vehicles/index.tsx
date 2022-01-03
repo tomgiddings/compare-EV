@@ -28,7 +28,12 @@ const Vehicles: React.FC<IVehicles> = ({ vehicleData, loading, setCompare, compa
 
     return (
         <div className="grid grid-flow-row-dense md:grid-flow-row-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-3 mb-6">
-            {loading && <div>Loading</div>}
+            {loading && 
+              <div className="flex flex-col space-y-3 items-center">
+                <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-64 w-64"></div>
+                <div className="text-l text-purple-800">Loading</div>
+              </div>
+            }
             {!loading && (
               <>
                 {vehicleData.map(vehicle => (
