@@ -54,7 +54,7 @@ const CompareTable: React.FC<ICompareTable> = ({ compare, vehicles }) => {
     }
     return (
         <div className="overflow-hidden overflow-x-auto snap-x snap-mandatory mt-3">
-            <table className="w-max md:w-content table-auto border text-left shadow-lg">
+            <table className="w-max md:w-content table-auto border-separate text-left shadow-lg">
                 <thead className="tracking-wide">
                     <tr className="align-text-bottom">
                         <th className="w-24 md:w-64 min-w-full text-sm font-semibold bg-white z-40 sticky left-0 pr-1 pl-3 align-bottom text-gray-900"></th>
