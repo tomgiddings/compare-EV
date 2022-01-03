@@ -58,7 +58,7 @@ const Vehicles: React.FC<IVehicles> = ({ vehicleData, loading, setCompare, compa
                     </div>
                    
                     <div className="flex justify-between items-center p-5 bg-gray-100 rounded-b-xl">
-                        {vehicle?.pricing?.OTR && (<NumberFormat value={vehicle.pricing.OTR} displayType={'text'} thousandSeparator={true} prefix={'From £'} className="text-gray-700 text-xl font-medium" />)}
+                        {vehicle?.pricing?.OTR && (<NumberFormat value={vehicle.pricing.OTR} displayType={'text'} thousandSeparator={true} prefix={'From £'} className="text-gray-700 text-l xl:text-xl font-medium" />)}
                         <button onClick={() => handleCompare(vehicle._id)}
                           className="text-white
                           bg-gradient-to-r
