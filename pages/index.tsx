@@ -1,22 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image, { ImageLoader } from 'next/image';
+import Link from 'next/link';
 
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-
-import { generateAuthHeader, REALM_GRAPHQL_ENDPOINT } from '../lib/RealmClient';
-import * as I from '../lib/Interface';
 
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 const Home: NextPage = () => {
-  const [loading, setLoading] = useState(true);
-  const [vehicles, setVehicles] = useState<Array<I.Vehicle>>([]);
-  const [compare, setCompare] = useState<Array<string>>([]);
-  const [showComparison, setShowComparison] = useState<boolean>(false)
-
   const logoColor = '#ffffff';
 
   const loader: ImageLoader = ({ src, width, quality }) => {
@@ -51,30 +41,31 @@ const Home: NextPage = () => {
                   <h1 className="tracking-wider">Welcome to CompareEV: <small className="text-purple-800">The Electric Vehicle Comparison site</small></h1>
                   <p>Finding an electric vehicle that&apos;s right for you can be a challenging task,
                   and it&apos;s sometimes hard to know where to start. CompareEV lets you select vehicles that interest you and easily compare them (with handy notes on what each feature means for you).</p>
-
-                  <a href="/compare"
-                  className="text-white
-                  w-full md:w-1/3
-                  bg-gradient-to-r
-                  from-purple-900
-                  to-purple-700
-                  hover:from-purple-900
-                  hover:to-purple-800
-                  focus:ring-4
-                  focus:ring-blue-300
-                  font-medium rounded-lg
-                  text-l
-                  px-3 py-3
-                  text-center
-                  flex
-                  items-center
-                  tracking-wide
-                  no-underline"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 pr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                  Get Started</a>
+                  <Link href="/compare">
+                    <a href="/compare"
+                    className="text-white
+                    w-full md:w-1/3
+                    bg-gradient-to-r
+                    from-purple-900
+                    to-purple-700
+                    hover:from-purple-900
+                    hover:to-purple-800
+                    focus:ring-4
+                    focus:ring-blue-300
+                    font-medium rounded-lg
+                    text-l
+                    px-3 py-3
+                    text-center
+                    flex
+                    items-center
+                    tracking-wide
+                    no-underline"
+                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 pr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                    Get Started</a>
+                  </Link>
                 </article>
                 <article className="container mx-auto prose mt-7">
                   <h2>Open Source</h2>
