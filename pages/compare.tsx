@@ -83,7 +83,7 @@ const Compare: NextPage = () => {
           <>
             <section className="mb-6 z-10">
             <div className="container mx-auto space-y-3 content">
-              <h1 className="text-2xl md:text-4xl">Pick &amp; Mix:&nbsp;<small className="text-purple-800">Add the vehicles that you would like to compare</small></h1>
+              <h1 className="text-2xl md:text-4xl tracking-wide">Pick &amp; Mix:&nbsp;<small className="text-purple-800">Add the vehicles that you would like to compare</small></h1>
             </div>
             </section>
             <section className="container mx-auto">
