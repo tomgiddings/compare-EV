@@ -35,6 +35,14 @@ const Compare: NextPage = () => {
         pricing {
           OTR
         }
+        chargingAC {
+          method
+          powerRating
+        }
+        chargingDC {
+          method
+          powerRating
+        }
         images
     }
   }
@@ -59,7 +67,7 @@ const Compare: NextPage = () => {
 
     fetchData();
   }, [setVehicles, FIND_VEHICLES]);
-  
+
   return (
     <>
       <Head>

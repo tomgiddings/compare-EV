@@ -25,11 +25,48 @@ const CompareTable: React.FC<ICompareTable> = ({ compare, vehicles }) => {
             tooltip: 'On the road price'
         },
         { 
+            key: 'battery',
+            displayName: 'Battery',
+            displayType: 'number',
+            suffix: ' kWh',
+            tooltip: 'This is the capacity of the vehicle battery.'
+        },
+        { 
             key: 'WLTP',
             displayName: 'WLTP',
             displayType: 'number',
             suffix: ' miles',
-            tooltip: 'How far you can travel on a full charge in ideal conditions'
+            tooltip: 'How far you can travel on a full charge in ideal conditions.'
+        },
+        { 
+            key: 'chargingDC',
+            subKey: 'method',
+            displayName: 'DC charge method',
+            displayType: 'string',
+            tooltip: 'Charging with DC (Direct Current) offers rapid or ultra-rapid charging.'
+        },
+        { 
+            key: 'chargingDC',
+            subKey: 'powerRating',
+            displayName: 'DC charge rate',
+            displayType: 'number',
+            suffix: ' kW',
+            tooltip: 'Shown in kW (kilowatts), this determines how quickly your vehicle can charge.'
+        },
+        { 
+            key: 'chargingAC',
+            subKey: 'method',
+            displayName: 'AC charge method',
+            displayType: 'string',
+            tooltip: 'The supported charging method using AC (Alternating Current).'
+        },
+        { 
+            key: 'chargingAC',
+            subKey: 'powerRating',
+            displayName: 'AC charge rate',
+            displayType: 'number',
+            suffix: ' kW',
+            tooltip: 'Shown in kW (kilowatts), this determines how quickly your vehicle can charge.'
         }
     ];
 
@@ -44,6 +81,9 @@ const CompareTable: React.FC<ICompareTable> = ({ compare, vehicles }) => {
             value = parent as string;
         }
 
+        if(typeof value == 'string') {
+            value = value.replace(/_/g, ' ');
+        }
 
         switch (displayType) {
             case 'number':
@@ -84,7 +124,7 @@ const CompareTable: React.FC<ICompareTable> = ({ compare, vehicles }) => {
                         dataToInclude.map(specification => {
                             const { displayName, key } = specification;
                             return (
-                                <tr key={key} className="border relative">
+                                <tr key={displayName} className="border relative">
                                     <td className="p-3 bg-gray-100 sticky left-0">
                                         {displayName}
                                     </td>
