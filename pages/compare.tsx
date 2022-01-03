@@ -75,7 +75,7 @@ const Compare: NextPage = () => {
           <>
             <section className="mb-6 z-10">
             <div className="container mx-auto space-y-3 content">
-              <h1 className="tracking-wider">Pick &amp; Mix:&nbsp;<small className="text-purple-800">Add the vehicles that you would like to compare</small></h1>
+              <h1 className="text-2xl md:text-4xl">Pick &amp; Mix:&nbsp;<small className="text-purple-800">Add the vehicles that you would like to compare</small></h1>
             </div>
             </section>
             <section className="container mx-auto">
@@ -86,7 +86,7 @@ const Compare: NextPage = () => {
 
         {showComparison && compare.length > 1 && 
           <section className="container mx-auto" id="comparison">
-            <h1>Compare your choices</h1>
+            <h1 className="text-2xl md:text-4xl">Your comparison</h1>
             <CompareTable compare={compare} vehicles={vehicles} />
           </section>
         }
